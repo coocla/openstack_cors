@@ -21,7 +21,7 @@ Using
 
 #### Cinder
 
-1. vim /etc/cinder/api-paste.ini
+vim /etc/cinder/api-paste.ini
 ```
 [filter:support_options]
 paste.filter_factory = openstack_cors:CorsMixin.factory
@@ -39,14 +39,14 @@ keystone = support_options request_id faultwrap sizelimit osprofiler authtoken k
 keystone_nolimit = support_options request_id faultwrap sizelimit osprofiler authtoken keystonecontext apiv2
 ```
 
-2. restart cinder-api
+restart cinder-api
 ```
 systemctl restart openstack-cinder-api
 ```
 
 #### Ceilometer
 
-1. vim /etc/ceilometer/api_paste.ini
+vim /etc/ceilometer/api_paste.ini
 ```
 [pipeline:main]
 pipeline = support_options uthtoken api-server
@@ -55,9 +55,10 @@ pipeline = support_options uthtoken api-server
 paste.filter_factory = openstack_cors:CorsMixin.factory
 ```
 
-2. restart ceilometer-api
+restart ceilometer-api
 ```
 systemctl restart openstack-ceilometer-api
 ```
+
 
 Keystone、Glance、Neutron、Nova has similar configuration.
