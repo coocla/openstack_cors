@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 import webob.exc
 
-class CorsMixin(HttpProtocol):
+class CorsMixin(object):
     def __init__(self, application):
         self.application = application
 
